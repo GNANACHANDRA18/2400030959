@@ -1,0 +1,262 @@
+# 🚀 DEPLOYMENT LINK & EXECUTION GUIDE
+
+## **Project Deployment Location**
+
+```
+C:\Users\gnana\fsds\New folder
+```
+
+---
+
+## **📱 APPLICATION TYPE: Console-Based (Not Web Server)**
+
+This is a **standalone Java Hibernate application** - not a web server. Therefore, there's **no localhost HTTP link**.
+
+### **Instead, execute directly:**
+
+---
+
+## **⚡ QUICK START - 3 METHODS**
+
+### **Method 1: Run from VS Code (EASIEST)**
+1. Open VS Code in the project folder
+2. Right-click [DataLoader.java](src/main/java/com/klef/fsad/exam/DataLoader.java)
+3. Select **"Run"** or **"Run Java"**
+
+**Result**: Application executes with test data
+
+---
+
+### **Method 2: Command Line (Windows)**
+
+**Open PowerShell or Command Prompt and paste:**
+
+```powershell
+cd "C:\Users\gnana\fsds\New folder" && mvn compile exec:java -Dexec.mainClass="com.klef.fsad.exam.DataLoader"
+```
+
+**Alternative for interactive menu:**
+```powershell
+cd "C:\Users\gnana\fsds\New folder" && mvn compile exec:java -Dexec.mainClass="com.klef.fsad.exam.ClientDemo"
+```
+
+---
+
+### **Method 3: Using JAR File**
+
+**After building:**
+```powershell
+cd "C:\Users\gnana\fsds\New folder"
+mvn clean package
+java -jar target/HibernateExam-1.0-SNAPSHOT.jar com.klef.fsad.exam.DataLoader
+```
+
+---
+
+## **🔗 DEPLOYMENT PATHS**
+
+### **Project Root**
+```
+C:\Users\gnana\fsds\New folder
+```
+
+### **Source Code**
+```
+C:\Users\gnana\fsds\New folder\src\main\java\com\klef\fsad\exam\
+├── Department.java
+├── ClientDemo.java
+├── HibernateUtil.java
+└── DataLoader.java
+```
+
+### **Build Output**
+```
+C:\Users\gnana\fsds\New folder\target\
+├── classes\
+├── HibernateExam-1.0-SNAPSHOT.jar
+└── lib\ (dependencies)
+```
+
+### **Database**
+```
+C:\Users\gnana\fsds\New folder\fsadexam_db.h2.db
+```
+
+---
+
+## **📊 EXECUTION OPTIONS**
+
+### **Option A: DataLoader (Automated Test)**
+Shows: Insert → View → Delete operations automatically
+
+```powershell
+mvn exec:java -Dexec.mainClass="com.klef.fsad.exam.DataLoader"
+```
+
+**Output:**
+```
+========================================
+   HIBERNATE DEPARTMENT MANAGEMENT
+========================================
+
+1. INSERTING TEST DEPARTMENTS...
+✓ Department 1 inserted with ID: 1
+✓ Department 2 inserted with ID: 2
+✓ Department 3 inserted with ID: 3
+
+2. VIEWING ALL DEPARTMENTS...
+[Table of departments displayed]
+
+3. DELETING DEPARTMENT WITH ID: 2...
+✓ Department 2 deleted successfully
+
+4. VIEWING REMAINING DEPARTMENTS...
+[Updated table display]
+
+========================================
+      TEST COMPLETED SUCCESSFULLY
+========================================
+```
+
+---
+
+### **Option B: ClientDemo (Interactive Menu)**
+Menu-driven application for manual testing
+
+```powershell
+mvn exec:java -Dexec.mainClass="com.klef.fsad.exam.ClientDemo"
+```
+
+**Menu:**
+```
+===== Department Management System =====
+
+1. Insert Department
+2. Delete Department
+3. View All Departments
+4. View Department by ID
+5. Exit
+
+Enter your choice:
+```
+
+---
+
+## **💻 COMPLETE EXECUTION COMMAND**
+
+**Copy & Paste This (Windows PowerShell):**
+
+```powershell
+cd "C:\Users\gnana\fsds\New folder"; mvn clean compile exec:java -Dexec.mainClass="com.klef.fsad.exam.DataLoader"
+```
+
+---
+
+## **✅ WHAT HAPPENS WHEN YOU RUN IT**
+
+1. ✅ Maven compiles Java files
+2. ✅ Downloads dependencies (Hibernate, H2, SLF4J)
+3. ✅ SessionFactory creates H2 database
+4. ✅ Database tables auto-created
+5. ✅ DataLoader inserts 3 departments
+6. ✅ Displays all records in table format
+7. ✅ Deletes one department by ID
+8. ✅ Shows remaining records
+9. ✅ Application exits cleanly
+
+---
+
+## **🎯 EXAM DEMONSTRATION**
+
+To demonstrate the exam requirements:
+
+**Run this:**
+```powershell
+cd "C:\Users\gnana\fsds\New folder"
+mvn compile exec:java -Dexec.mainClass="com.klef.fsad.exam.DataLoader"
+```
+
+**This proves:**
+- ✅ INSERT operation works (3 departments added)
+- ✅ DELETE by ID works (1 department removed)
+- ✅ VIEW operations work (tables displayed)
+- ✅ Database persistence works (data saved to H2)
+- ✅ Hibernate ORM works (all operations via Hibernate)
+
+---
+
+## **🗂 FILE LOCATIONS**
+
+| File | Path |
+|------|------|
+| Project Folder | `C:\Users\gnana\fsds\New folder` |
+| pom.xml | `C:\Users\gnana\fsds\New folder\pom.xml` |
+| Department.java | `C:\Users\gnana\fsds\New folder\src\main\java\com\klef\fsad\exam\Department.java` |
+| ClientDemo.java | `C:\Users\gnana\fsds\New folder\src\main\java\com\klef\fsad\exam\ClientDemo.java` |
+| DataLoader.java | `C:\Users\gnana\fsds\New folder\src\main\java\com\klef\fsad\exam\DataLoader.java` |
+| HibernateUtil.java | `C:\Users\gnana\fsds\New folder\src\main\java\com\klef\fsad\exam\HibernateUtil.java` |
+| Config | `C:\Users\gnana\fsds\New folder\src\main\resources\hibernate.cfg.xml` |
+| Database | `C:\Users\gnana\fsds\New folder\fsadexam_db.h2.db` |
+
+---
+
+## **🔧 TROUBLESHOOTING**
+
+**Command not recognized:**
+```powershell
+# Add Maven to PATH permanently
+$env:PATH = "C:\Users\gnana\apache-maven-3.8.1\bin;$env:PATH"
+```
+
+**Database locked:**
+```powershell
+# Delete database files and restart
+rm C:\Users\gnana\fsds\New folder\fsadexam_db.*
+```
+
+**Recompile everything:**
+```powershell
+mvn clean install -DskipTests
+```
+
+---
+
+## **📥 FOR EXAM EVALUATION**
+
+**Evaluator Instructions:**
+
+1. Navigate to project folder:
+   ```
+   C:\Users\gnana\fsds\New folder
+   ```
+
+2. Run application:
+   ```powershell
+   mvn compile exec:java -Dexec.mainClass="com.klef.fsad.exam.DataLoader"
+   ```
+
+3. **Observe:**
+   - 3 departments are inserted ✓
+   - Auto-generated IDs appear ✓
+   - All records are displayed ✓
+   - One department is deleted ✓
+   - Remaining records shown ✓
+
+4. **Verify Source Code:**
+   - [Department.java](src/main/java/com/klef/fsad/exam/Department.java) - Entity with @GeneratedValue
+   - [ClientDemo.java](src/main/java/com/klef/fsad/exam/ClientDemo.java) - Insert & Delete operations
+   - [pom.xml](pom.xml) - Maven configuration
+
+---
+
+## **🎉 DEPLOYMENT SUMMARY**
+
+- **Status**: ✅ Ready to run
+- **Location**: `C:\Users\gnana\fsds\New folder`
+- **Command**: `mvn compile exec:java -Dexec.mainClass="com.klef.fsad.exam.DataLoader"`
+- **Database**: H2 Embedded (auto-created)
+- **No Setup Needed**: Everything self-contained
+
+---
+
+**Copy the command above and paste in PowerShell to execute! 🚀**

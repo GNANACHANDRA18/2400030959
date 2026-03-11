@@ -1,0 +1,40 @@
+# 🔗 DEPLOYMENT LINK
+
+## **Project Location (Direct Link)**
+
+```
+C:\Users\gnana\fsds\New folder
+```
+
+---
+
+## **🚀 Execute Now**
+
+**Copy & Paste in PowerShell:**
+
+```
+cd "C:\Users\gnana\fsds\New folder"; mvn compile exec:java -Dexec.mainClass="com.klef.fsad.exam.DataLoader"
+```
+
+---
+
+## **📁 File Paths**
+
+- **Folder**: `C:\Users\gnana\fsds\New folder`
+- **Department.java**: `C:\Users\gnana\fsds\New folder\src\main\java\com\klef\fsad\exam\Department.java`
+- **ClientDemo.java**: `C:\Users\gnana\fsds\New folder\src\main\java\com\klef\fsad\exam\ClientDemo.java`
+- **pom.xml**: `C:\Users\gnana\fsds\New folder\pom.xml`
+- **Database**: `C:\Users\gnana\fsds\New folder\fsadexam_db.h2.db`
+
+---
+
+## **💻 Run Application**
+
+```powershell
+cd "C:\Users\gnana\fsds\New folder"
+mvn compile exec:java -Dexec.mainClass="com.klef.fsad.exam.DataLoader"
+```
+
+---
+
+**✅ Ready to Execute!**

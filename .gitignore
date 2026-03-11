@@ -1,0 +1,27 @@
+# Maven
+target/
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# IDE
+.classpath
+.project
+.settings/
+*.swp
+*.swo
+*~
+.DS_Store
+.vscode/
+*.iml
+.idea/
+
+# Database
+*.h2.db
+*.db
+*.sqlite
+
+# Logs
+*.log
